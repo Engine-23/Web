@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.space-background {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?q=80&w=2072&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.system-container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 50px rgba(65, 105, 225, 0.4);
+}
+
+.orbit-path {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#moon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: moon-orbit 10s linear infinite;
+}
+
+@keyframes moon-orbit {
+    0% {
+        transform: translate(0, -150px) scale(0.8);
+        z-index: 5;
+    }
+
+    25% {
+        transform: translate(250px, 0) scale(1);
+        z-index: 15;
+    }
+
+    50% {
+        transform: translate(0, 150px) scale(1.3);
+        z-index: 15;
+    }
+  
+    75% {
+        transform: translate(-250px, 0) scale(1);
+        z-index: 5; 
+    }
+    
+    100% {
+        transform: translate(0, -150px) scale(0.8);
+        z-index: 5;
+    }
+}
